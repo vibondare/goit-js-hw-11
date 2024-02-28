@@ -8,12 +8,6 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 export function renderGallery(imagesData) {
   const data = imagesData.hits;
 
-  const lightbox = new simpleLightbox('.gallery a', {
-    captionsData: 'alt',
-  });
-
-  lightbox.refresh();
-
   function addLoader() {
     loadingMessageContainer.style.display = 'block';
   }
@@ -63,6 +57,10 @@ export function renderGallery(imagesData) {
     .join('');
 
   gallery.innerHTML = markup;
+
+  const lightbox = new simpleLightbox('.gallery a', {
+    captionsData: 'alt',
+  });
 
   hideLoader();
 }

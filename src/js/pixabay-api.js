@@ -1,4 +1,5 @@
 import iziToast from 'izitoast';
+import { gallery } from '../main.js';
 import { renderGallery } from './render-functions.js';
 import errorIcon from '../img/error-icon.svg';
 
@@ -32,6 +33,7 @@ export function getImages(link) {
         theme: 'dark',
         iconUrl: errorIcon,
       });
+      gallery.innerHTML = "";
       return;
     }
     renderGallery(imagesData);
