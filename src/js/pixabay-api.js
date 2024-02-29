@@ -1,6 +1,9 @@
 import iziToast from 'izitoast';
 import { gallery } from '../main.js';
+import { addLoader } from '../main.js';
+import { hideLoader } from '../main.js';
 import { renderGallery } from './render-functions.js';
+import { loadingMessageContainer } from '../main.js';
 import errorIcon from '../img/error-icon.svg';
 
 let imagesData = '';
@@ -34,7 +37,11 @@ export function getImages(link) {
         theme: 'dark',
         iconUrl: errorIcon,
       });
-      gallery.innerHTML = "";
+
+      gallery.innerHTML = '';
+
+      hideLoader();
+
       return;
     }
 

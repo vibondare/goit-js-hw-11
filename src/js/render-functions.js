@@ -1,17 +1,13 @@
 import simpleLightbox from 'simplelightbox';
 import { gallery } from '../main.js';
+import { addLoader } from '../main.js';
+import { hideLoader } from '../main.js';
 import { loadingMessageContainer } from '../main.js';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export function renderGallery(imagesData) {
   const data = imagesData.hits;
-
-  function hideLoader() {
-    loadingMessageContainer.classList.remove(
-      'loading-message-container-is-visible'
-    );
-  }
 
   const markup = data
     .map(

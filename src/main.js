@@ -9,6 +9,18 @@ export const loadingMessageContainer = document.querySelector('.loading-message-
 
 searchForm.addEventListener("submit", submitSearch);
 
+export function addLoader() {
+  loadingMessageContainer.classList.add(
+    'loading-message-container-is-visible'
+  );
+}
+
+export function hideLoader() {
+  loadingMessageContainer.classList.remove(
+    'loading-message-container-is-visible'
+  );
+}
+
 function submitSearch(event) {
   event.preventDefault();
 
@@ -21,12 +33,6 @@ function submitSearch(event) {
   const q = searchInput.value;
 
   const link = `${basicLink}?key=${key}&q=${q}&image_type='photo'&orientation='horizontal'&safesearch=true`;
-
-  function addLoader() {
-    loadingMessageContainer.classList.add(
-      'loading-message-container-is-visible'
-    );
-  }
 
   addLoader();
 
