@@ -22,6 +22,14 @@ function submitSearch(event) {
 
   const link = `${basicLink}?key=${key}&q=${q}&image_type='photo'&orientation='horizontal'&safesearch=true`;
 
+  function addLoader() {
+    loadingMessageContainer.classList.add(
+      'loading-message-container-is-visible'
+    );
+  }
+
+  addLoader();
+
   getImages(link);
 }
 

@@ -22,6 +22,7 @@ export function getImages(link) {
 
   fetchImages(link).then(data => {
     imagesData = data;
+
     if (imagesData.hits.length === 0) {
       iziToast.show({
         title: 'Error',
@@ -36,6 +37,7 @@ export function getImages(link) {
       gallery.innerHTML = "";
       return;
     }
+
     renderGallery(imagesData);
   });
 }

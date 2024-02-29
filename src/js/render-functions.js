@@ -1,22 +1,17 @@
 import simpleLightbox from 'simplelightbox';
 import { gallery } from '../main.js';
-import { loadingMessageContainer } from '../main.js'
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
-
+import { loadingMessageContainer } from '../main.js';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export function renderGallery(imagesData) {
   const data = imagesData.hits;
 
-  function addLoader() {
-    loadingMessageContainer.style.display = 'block';
-  }
-
   function hideLoader() {
-    loadingMessageContainer.style.display = 'none';
+    loadingMessageContainer.classList.remove(
+      'loading-message-container-is-visible'
+    );
   }
-
-  addLoader();
 
   const markup = data
     .map(

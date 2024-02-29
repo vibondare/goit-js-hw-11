@@ -62,7 +62,11 @@ body {
 .loading-message-container {
   display: none;
   width: 256px;
-  margin: 0 auto;
+  margin: 24px auto;
+}
+
+.loading-message-container-is-visible {
+  display: block;
 }
 
 /* styles for the gallery */
